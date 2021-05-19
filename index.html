@@ -24,8 +24,14 @@
         <ul v-if="toDoList.length > 0">
 
             <li v-for="(toDo, index) in toDoList">
-                <span @click="toggle(index)">{{toDo.task}} {{toDo.flag}}</span>
+
+                <span :class="(toDo.flag == true) ? 'completed' : '' "
+                @click="toggle(index)">
+                    {{toDo.task}} {{toDo.flag}}
+                </span>
+
                 <i class="fas fa-times-circle" @click="removeToDo(index)"></i>
+                
             </li>
 
         </ul>

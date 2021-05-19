@@ -1,4 +1,9 @@
 .fas.fa-times-circle,
 span {
     cursor: pointer;
+    /* text-decoration: line-through; */
+}
+
+.completed {
+    text-decoration: line-through;
 }
