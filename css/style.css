@@ -1,9 +1,43 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .fas.fa-times-circle,
 span {
     cursor: pointer;
+    transition: 0.25s;
+}
+.fas.fa-times-circle:hover {
+    transform: scale(1.2);
 }
 
 .completed {
     text-decoration: line-through;
 }
 
+/* --- --- --- */
+#root {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#wrapper {
+    background-color: antiquewhite;
+    padding: 25px;
+    border-radius: 25px;
+}
+
+ul {
+    margin-top: 25px;
+    
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}

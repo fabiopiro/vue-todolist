@@ -16,27 +16,30 @@
 
     <!-- #root -->
     <div id="root">
+        <div id="wrapper">
 
-        <input type="text" placeholder="Nuovo Task" v-model="newToDo.task" @keydown.enter="addTask">
+            <input type="text" placeholder="Nuovo Task" v-model="newToDo.task" @keydown.enter="addTask">
+    
+            <button @click="addTask">Aggiungi Task</button>
+    
+            <ul v-if="toDoList.length > 0">
+    
+                <li v-for="(toDo, index) in toDoList">
+    
+                    <span :class="(toDo.flag == true) ? 'completed' : '' "
+                    @click="toggle(index)">
+                        {{toDo.task}} <!-- {{toDo.flag}} -->
+                    </span>
+    
+                    <i class="fas fa-times-circle" @click="removeToDo(index)"></i>
+                    
+                </li>
+    
+            </ul>
+    
+            <h1 v-else>Non ci sono Task</h1>
 
-        <button @click="addTask">Aggiungi Task</button>
-
-        <ul v-if="toDoList.length > 0">
-
-            <li v-for="(toDo, index) in toDoList">
-
-                <span :class="(toDo.flag == true) ? 'completed' : '' "
-                @click="toggle(index)">
-                    {{toDo.task}} {{toDo.flag}}
-                </span>
-
-                <i class="fas fa-times-circle" @click="removeToDo(index)"></i>
-                
-            </li>
-
-        </ul>
-
-        <h1 v-else>Non ci sono Task</h1>
+        </div>
     </div>
     <!-- /#root -->
 
