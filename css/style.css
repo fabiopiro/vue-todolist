@@ -1,3 +1,4 @@
-.fas.fa-times-circle {
+.fas.fa-times-circle,
+span {
     cursor: pointer;
 }

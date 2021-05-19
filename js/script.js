@@ -11,6 +11,7 @@ Predisporre un input per aggiungere un nuovo item alla lista: digitando il tasto
 
 BONUS:
 Al click sull'intero elemento della lista, si modifica il valore della proprietà completed da false a true, e viceversa in caso di successivi click (toggle).
+
 Quando un elemento ha la proprietà "completed" settata a true, il testo corrispondente sarà mostrato barrato (esisterà una proprietà CSS per ottenere questo effetto???).
 */
 
@@ -53,7 +54,7 @@ var app = new Vue(
         },
 
         methods:{
-            
+
             removeToDo: function(indexToRemove) {
                 // ".splice(indice da rimuovere, quanti indici da rimuovere) --> X GLI ARRAY!"
                 this.toDoList.splice(indexToRemove, 1);
@@ -72,6 +73,14 @@ var app = new Vue(
 
                 }
 
+            },
+
+            toggle: function(indexToChange) {
+                if (this.toDoList[indexToChange].flag == false) {
+                    this.toDoList[indexToChange].flag = true;
+                } else {
+                    this.toDoList[indexToChange].flag = false;
+                }
             }
         },
     }
