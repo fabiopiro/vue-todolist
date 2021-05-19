@@ -77,7 +77,9 @@ var app = new Vue(
 
             toggle: function(indexToChange) {
                 if (this.toDoList[indexToChange].flag == false) {
+
                     this.toDoList[indexToChange].flag = true;
+                    
                 } else {
                     this.toDoList[indexToChange].flag = false;
                 }
